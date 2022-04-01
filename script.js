@@ -4,6 +4,8 @@ let playerScore = 0
 let computerScore = 0
 let roundWinner = ''
 
+
+
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     roundWinner = 'tie'
@@ -24,6 +26,7 @@ function playRound(playerSelection, computerSelection) {
     computerScore++
     roundWinner = 'computer'
   }
+  //console.log("Round winner: " + roundWinner)
   updateScoreMessage(roundWinner, playerSelection, computerSelection)
 }
 
@@ -39,9 +42,22 @@ function getRandomChoice() {
   }
 }
 
+//dont need yet for easom 
 function isGameOver() {
   return playerScore === 5 || computerScore === 5
 }
+
+
+//for Easom 
+// for (let i = 0; i <5; i++){
+//   let playerChoice = prompt("rock, paper, or scissors? ").toUpperCase()
+//   let compChoice = getRandomChoice()
+//   console.log("PLAYER: " + playerChoice)
+//   console.log("COMP CHOICE: " + compChoice)
+//   playRound(playerChoice, compChoice)
+//   console.log("Player score: " + playerScore)
+//   console.log("Computer score: " + computerScore)
+// }
 
 // UI
 
@@ -172,3 +188,5 @@ function restartGame() {
   endgameModal.classList.remove('active')
   overlay.classList.remove('active')
 }
+
+
